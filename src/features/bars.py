@@ -3,11 +3,11 @@ import numpy as np
 from numba import jit
 from tqdm import tqdm
 
-# /-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/
+#========================================================
 def returns(s):
     arr = np.diff(np.log(s))
     return (pd.Series(arr, index=s.index[1:]))
-# /-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/
+#========================================================
 def tick_bars(df, column, m):
     '''
     compute tick bars
@@ -23,7 +23,7 @@ def tick_bars(df, column, m):
     ts = 0
     idx = []
     for i, x in enumerate(tqdm(t)):
-        ts += i
+        ts += 1 
         if ts >= m:
             idx.append(i)
             ts = 0
@@ -33,7 +33,7 @@ def tick_bars(df, column, m):
 def tick_bar_df(df, column, m):
     idx = tick_bars(df, column, m)
     return df.iloc[idx]
-# /-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/
+#========================================================
 def volume_bars(df, column, m):
     '''
     compute volume bars
@@ -59,7 +59,7 @@ def volume_bars(df, column, m):
 def volume_bar_df(df, column, m):
     idx = volume_bars(df, column, m)
     return df.iloc[idx]
-# /-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/
+#========================================================
 def dollar_bars(df, column, m):
     '''
     compute dollar bars
@@ -85,7 +85,7 @@ def dollar_bars(df, column, m):
 def dollar_bar_df(df, column, m):
     idx = dollar_bars(df, column, m)
     return df.iloc[idx]
-# /-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/
+#========================================================
 
 @jit(nopython=True)
 def numba_isclose(a,b,rel_tol=1e-09,abs_tol=0.0):
