@@ -14,10 +14,13 @@ dask>=0.17.0
 numpy>=1.14.0
 pymc3>=3.3
 theano>=1.0.1
-sklearn>=0.19.1
+scikit-learn>=0.19.1
 statsmodels>=0.8.0
 scipy>=1.0.0
 matplotlib>=2.1.2
 seaborn>=0.8.1
 pyarrow>=0.8.0
 fastparquet>=0.1.5
+watermark
+ffn
+missingno
