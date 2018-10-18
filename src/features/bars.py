@@ -8,7 +8,7 @@ def returns(s):
     arr = np.diff(np.log(s))
     return (pd.Series(arr, index=s.index[1:]))
 #========================================================
-def tick_bars(df, column, m):
+def tick_bars(df, price_column, m):
     '''
     compute tick bars
 
@@ -19,33 +19,33 @@ def tick_bars(df, column, m):
     # returns
         idx: list of indices
     '''
-    t = df[column]
+    t = df[price_column]
     ts = 0
     idx = []
     for i, x in enumerate(tqdm(t)):
-        ts += 1 
+        ts += 1
         if ts >= m:
             idx.append(i)
             ts = 0
             continue
     return idx
 
-def tick_bar_df(df, column, m):
-    idx = tick_bars(df, column, m)
+def tick_bar_df(df, price_column, m):
+    idx = tick_bars(df, price_column, m)
     return df.iloc[idx]
 #========================================================
-def volume_bars(df, column, m):
+def volume_bars(df, volume_column, m):
     '''
     compute volume bars
 
     # args
         df: pd.DataFrame()
-        column: name for price data
+        column: name for volume data
         m: int(), threshold value for volume
     # returns
         idx: list of indices
     '''
-    t = df[column]
+    t = df[volume_column]
     ts = 0
     idx = []
     for i, x in enumerate(tqdm(t)):
@@ -56,22 +56,22 @@ def volume_bars(df, column, m):
             continue
     return idx
 
-def volume_bar_df(df, column, m):
-    idx = volume_bars(df, column, m)
+def volume_bar_df(df, volume_column, m):
+    idx = volume_bars(df, volume_column, m)
     return df.iloc[idx]
 #========================================================
-def dollar_bars(df, column, m):
+def dollar_bars(df, dv_column, m):
     '''
     compute dollar bars
 
     # args
         df: pd.DataFrame()
-        column: name for price data
+        column: name for dollar volume data
         m: int(), threshold value for dollars
     # returns
         idx: list of indices
     '''
-    t = df[column]
+    t = df[dv_column]
     ts = 0
     idx = []
     for i, x in enumerate(tqdm(t)):
@@ -82,8 +82,8 @@ def dollar_bars(df, column, m):
             continue
     return idx
 
-def dollar_bar_df(df, column, m):
-    idx = dollar_bars(df, column, m)
+def dollar_bar_df(df, dv_column, m):
+    idx = dollar_bars(df, dv_column, m)
     return df.iloc[idx]
 #========================================================
 

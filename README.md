@@ -3,6 +3,8 @@ Advances in Financial Machine Learning Exercises
 
 Experimental solutions to selected exercises from the book [Advances in Financial Machine Learning by Marcos Lopez De Prado](https://www.wiley.com/en-us/Advances+in+Financial+Machine+Learning-p-9781119482109)
 
+Make sure to use `python setup.py install` in your environment so the `src` scripts which include `bars.py` and `snippets.py` can be found by the jupyter notebooks and other scripts you may develop.
+
 Project Organization
 ------------
 
