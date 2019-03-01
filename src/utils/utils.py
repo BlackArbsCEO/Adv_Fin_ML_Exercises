@@ -43,13 +43,18 @@ def setup_system_logger(out_log_fp, pdir, logger):
 #=============================================================================
 # general utils
 
-def get_relative_project_dir(project_repo_name=None):
+def get_relative_project_dir(project_repo_name=None, partial=True):
     """helper fn to get local project directory"""
     current_working_directory = Path.cwd()
     cwd_parts = current_working_directory.parts
-    while cwd_parts[-1] != project_repo_name:
-        current_working_directory = current_working_directory.parent
-        cwd_parts = current_working_directory.parts
+    if partial:
+        while project_repo_name not in cwd_parts[-1]:
+            current_working_directory = current_working_directory.parent
+            cwd_parts = current_working_directory.parts
+    else:
+        while cwd_parts[-1] != project_repo_name:
+            current_working_directory = current_working_directory.parent
+            cwd_parts = current_working_directory.parts
     return current_working_directory
 
 def check_path(fp):

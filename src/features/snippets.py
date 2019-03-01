@@ -112,27 +112,50 @@ def addVerticalBarrier(tEvents, close, numDays=1):
     t1=t1[t1<close.shape[0]]
     t1=(pd.Series(close.index[t1],index=tEvents[:t1.shape[0]]))
     return t1
+
 # =======================================================
-# Labeling for side and size [3.5]
-def _getBins(events,close,t1=None):
-    #1) prices aligned with events
-    events_=events.dropna(subset=['t1'])
-    px=events_.index.union(events_['t1'].values).drop_duplicates()
-    px=close.reindex(px,method='bfill')
-    #2) create out object
-    out=pd.DataFrame(index=events_.index)
-    out['ret']=px.loc[events_['t1'].values].values/px.loc[events_.index]-1
-    out['bin']=np.sign(out['ret'])
-    # where out index and t1 (vertical barrier) intersect label 0
-    try:
-        locs = out.query('index in @t1').index
-        out.loc[locs, 'bin'] = 0
-    except:
-        pass
+# Labeling for side and size [3.5, 3.8]
+
+
+def getBins(events, close, t1=None):
+    '''
+    Compute event's outcome (including side information, if provided).
+    events is a DataFrame where:
+    -events.index is event's starttime
+    -events['t1'] is event's endtime
+    -events['trgt'] is event's target
+    -events['side'] (optional) implies the algo's position side
+    -t1 is original vertical barrier series
+    Case 1: ('side' not in events): bin in (-1,1) <-label by price action
+    Case 2: ('side' in events): bin in (0,1) <-label by pnl (meta-labeling)
+    '''
+    # 1) prices aligned with events
+    events_ = events.dropna(subset=['t1'])
+    px = events_.index.union(events_['t1'].values).drop_duplicates()
+    px = close.reindex(px, method='bfill')
+    # 2) create out object
+    out = pd.DataFrame(index=events_.index)
+    out['ret'] = px.loc[events_['t1'].values].values / px.loc[
+        events_.index] - 1
+    if 'side' in events_: out['ret'] *= events_['side']  # meta-labeling
+    out['bin'] = np.sign(out['ret'])
+
+    if 'side' not in events_:
+        # only applies when not meta-labeling.
+        # to update bin to 0 when vertical barrier is touched, we need the
+        # original vertical barrier series since the events['t1'] is the time
+        # of first touch of any barrier and not the vertical barrier
+        # specifically. The index of the intersection of the vertical barrier
+        # values and the events['t1'] values indicate which bin labels needs
+        # to be turned to 0.
+        vtouch_first_idx = events[events['t1'].isin(t1.values)].index
+        out.loc[vtouch_first_idx, 'bin'] = 0.
+
+    if 'side' in events_: out.loc[out['ret'] <= 0, 'bin'] = 0  # meta-labeling
     return out
 # =======================================================
 # Expanding getBins to Incorporate Meta-Labeling [3.7]
-def getBins(events, close):
+def getBinsOld(events, close):
     '''
     Compute event's outcome (including side information, if provided).
     events is a DataFrame where:
