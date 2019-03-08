@@ -5,6 +5,22 @@ Experimental solutions to selected exercises from the book [Advances in Financia
 
 Make sure to use `python setup.py install` in your environment so the `src` scripts which include `bars.py` and `snippets.py` can be found by the jupyter notebooks and other scripts you may develop.
 
+## Additional AFML Projects and Resources
+There are other github projects and links that people share that are inspired by the book. I'd like to collect them here to share with others in the spirit of collaboration and idea sharing. If you have more to add please let me know. 
+
+### Github Projects
+
+- [The Open Source Hedge Fund Project](http://www.quantsportal.com/the-open-source-hedge-fund-project/)
+	- [Github MLFinLab Repo](https://github.com/hudson-and-thames/mlfinlab)
+	- [Github Notebooks](https://github.com/hudson-and-thames/research)
+
+- [rspadim Github](https://github.com/rspadim/Adv_Fin_ML/)
+
+### Article Links
+
+- [Financial Machine Learning Part 0: Bars by Maks Ivanov](https://towardsdatascience.com/financial-machine-learning-part-0-bars-745897d4e4ba)
+
+
 Project Organization
 ------------
 
