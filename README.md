@@ -19,6 +19,7 @@ There are other github projects and links that people share that are inspired by
 ### Article Links
 
 - [Financial Machine Learning Part 0: Bars by Maks Ivanov](https://towardsdatascience.com/financial-machine-learning-part-0-bars-745897d4e4ba)
+- [Deflated Sharpe Ratio](https://gmarti.gitlab.io/qfin/2018/05/30/deflated-sharpe-ratio.html) - [Gautier Marti blog](https://gmarti.gitlab.io/)
 
 
 Project Organization
