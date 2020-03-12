@@ -110,7 +110,7 @@ pluggy==0.7.1
 poyo==0.4.2
 prometheus-client==0.3.1
 prompt-toolkit==1.0.15
-psutil==5.4.7
+psutil==5.6.6
 psycopg2==2.7.6.1
 ptyprocess==0.6.0
 py==1.6.0
