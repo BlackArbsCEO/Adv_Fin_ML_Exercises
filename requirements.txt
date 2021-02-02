@@ -12,7 +12,7 @@ awscli==1.16.111
 Babel==2.6.0
 backcall==0.1.0
 binaryornot==0.4.4
-bleach==2.1.4
+bleach==3.3.0
 bokeh==0.13.0
 botocore==1.12.101
 Bottleneck==1.2.1
