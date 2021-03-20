@@ -60,7 +60,7 @@ ipython==6.5.0
 ipython-genutils==0.2.0
 ipywidgets==7.4.2
 jedi==0.12.1
-Jinja2==2.10
+Jinja2==2.11.3
 jinja2-time==0.2.0
 jmespath==0.9.3
 joblib==0.12.5
