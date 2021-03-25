@@ -136,7 +136,7 @@ python-dateutil==2.7.3
 python-dotenv==0.10.1
 python-snappy==0.5.3
 pytz==2018.9
-PyYAML==3.13
+PyYAML==5.4
 pyzmq==17.1.2
 requests==2.21.0
 retrying==1.3.3
