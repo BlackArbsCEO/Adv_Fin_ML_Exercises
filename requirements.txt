@@ -121,7 +121,7 @@ pycodestyle==2.4.0
 pycparser==2.19
 pyflakes==2.0.0
 pyfolio==0.8.0
-Pygments==2.3.1
+Pygments==2.7.4
 pygpu==0.7.6
 PyJWT==1.7.1
 pymc3==3.6
