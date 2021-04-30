@@ -140,7 +140,7 @@ PyYAML==3.13
 pyzmq==17.1.2
 requests==2.21.0
 retrying==1.3.3
-rsa==3.4.2
+rsa==4.7
 s3transfer==0.2.0
 scikit-learn==0.20.2
 scikit-misc==0.1.1
