@@ -170,7 +170,7 @@ tqdm==4.28.1
 traitlets==4.3.2
 Twisted==19.7.0
 tzlocal==1.5.1
-urllib3==1.24.1
+urllib3==1.26.5
 uvloop==0.11.3
 watermark==1.6.1
 wcwidth==0.1.7
