@@ -176,7 +176,7 @@ watermark==1.6.1
 wcwidth==0.1.7
 webencodings==0.5.1
 websocket-client==0.54.0
-websockets==7.0
+websockets==9.1
 whichcraft==0.5.2
 widgetsnbextension==3.4.2
 wrapt==1.10.11
