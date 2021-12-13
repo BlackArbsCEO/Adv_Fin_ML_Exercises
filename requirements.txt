@@ -72,7 +72,7 @@ llvmlite==0.26.0
 locket==0.2.0
 logzero==1.5.0
 lunardate==0.2.0
-lxml==4.2.5
+lxml==4.6.5
 Mako==1.0.7
 MarkupSafe==1.1.0
 matplotlib==3.0.2
