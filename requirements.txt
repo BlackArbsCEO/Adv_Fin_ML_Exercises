@@ -56,7 +56,7 @@ imagesize==1.1.0
 imbalanced-learn==0.4.3
 incremental==17.5.0
 ipykernel==4.9.0
-ipython==6.5.0
+ipython==7.16.3
 ipython-genutils==0.2.0
 ipywidgets==7.4.2
 jedi==0.12.1
