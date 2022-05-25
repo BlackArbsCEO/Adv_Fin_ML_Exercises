@@ -123,7 +123,7 @@ pyflakes==2.0.0
 pyfolio==0.8.0
 Pygments==2.3.1
 pygpu==0.7.6
-PyJWT==1.7.1
+PyJWT==2.4.0
 pymc3==3.6
 pyOpenSSL==19.0.0
 pyparsing==2.3.1
