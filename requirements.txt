@@ -90,7 +90,7 @@ nb-conda==2.2.1
 nb-conda-kernels==2.1.0
 nbconvert==5.3.1
 nbformat==4.4.0
-notebook==5.7.4
+notebook==6.4.12
 numba==0.41.0
 numpy==1.15.4
 packaging==19.0
