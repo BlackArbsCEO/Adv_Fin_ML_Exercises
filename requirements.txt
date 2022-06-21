@@ -92,7 +92,7 @@ nbconvert==5.3.1
 nbformat==4.4.0
 notebook==5.7.4
 numba==0.41.0
-numpy==1.15.4
+numpy==1.22.0
 packaging==19.0
 palettable==3.1.1
 pandas==0.23.4
