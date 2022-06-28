@@ -2,7 +2,7 @@ aiohttp==3.4.4
 alabaster==0.7.12
 appdirs==1.4.3
 arch==4.7.0
-arrow==0.12.1
+arrow==0.15.1
 asn1crypto==0.24.0
 async-timeout==3.0.0
 atomicwrites==1.2.1
