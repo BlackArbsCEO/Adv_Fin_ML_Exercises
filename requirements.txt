@@ -34,7 +34,7 @@ cytoolz==0.9.0.1
 dask==1.0.0
 decorator==4.3.0
 descartes==1.1.0
-distributed==1.25.2
+distributed==2021.10.0
 docutils==0.14
 empyrical==0.3.4
 engarde==0.4.0
