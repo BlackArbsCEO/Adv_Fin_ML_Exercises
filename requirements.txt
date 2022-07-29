@@ -78,7 +78,7 @@ MarkupSafe==1.1.0
 matplotlib==3.0.2
 mccabe==0.6.1
 missingno==0.4.1
-mistune==0.8.3
+mistune==2.0.3
 mizani==0.5.3
 mkl-fft==1.0.6
 mkl-random==1.0.2
