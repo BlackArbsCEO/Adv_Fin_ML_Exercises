@@ -73,7 +73,7 @@ locket==0.2.0
 logzero==1.5.0
 lunardate==0.2.0
 lxml==4.2.5
-Mako==1.0.7
+Mako==1.2.2
 MarkupSafe==1.1.0
 matplotlib==3.0.2
 mccabe==0.6.1
